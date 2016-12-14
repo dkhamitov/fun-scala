@@ -1,2 +1,2 @@
 # fun-scala
-let's just do some scala for fun
+Let's just do some scala for fun
