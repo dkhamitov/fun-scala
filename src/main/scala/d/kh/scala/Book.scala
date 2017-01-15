@@ -11,7 +11,7 @@ object Book {
     *              of the method is undefined
     * @return
     */
-  def findAllAuthorsWith2Books(books: List[Book]): List[String] = {
+  def findAllAuthorsWithAtLeast2Books(books: Set[Book]): Set[String] = {
     for {
       b1 <- books
       b2 <- books
