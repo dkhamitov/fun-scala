@@ -17,7 +17,7 @@ class ForAndFlatMapTest extends FunSuite {
     val rabbits = List(Rabbit("X", "White"), Rabbit("Y", "Gray"))
 
     //then:
-    assert((for (x <- rabbits; y <- twiceRabbit(x)) yield y) == rabbits.flatMap(twiceRabbit))
+    assert((for (x <- rabbits; y <- twiceRabbit(x)) yield y) === rabbits.flatMap(twiceRabbit))
   }
 }
 

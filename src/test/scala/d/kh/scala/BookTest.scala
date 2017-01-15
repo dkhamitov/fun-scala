@@ -23,6 +23,6 @@ class BookTest extends FunSuite {
 
     val books = Set(book1, book2, book3, book4)
 
-    assert(Set("Joshua Bloch") == Book.findAllAuthorsWithAtLeast2Books(books))
+    assert(Set("Joshua Bloch") === Book.findAllAuthorsWithAtLeast2Books(books))
   }
 }
