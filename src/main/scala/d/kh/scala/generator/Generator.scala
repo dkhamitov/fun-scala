@@ -23,11 +23,11 @@ object Generator {
   val integers = new Generator[Int] {
     val rand = new Random()
 
-    override def generate: Int = rand.nextInt()
+    override def generate = rand.nextInt()
   }
 
   val booleans = new Generator[Boolean] {
-    override def generate: Boolean = integers.generate > 0
+    override def generate = integers.generate > 0
   }
 
   //  val pairs = new Generator[(Int, Int)] {
@@ -38,4 +38,10 @@ object Generator {
     x <- t
     y <- u
   } yield (x, y)
+
+  def single[T](x: T): Generator[T] = new Generator[T] {
+    override def generate = x
+  }
+
+  def choose(lo: Int, hi: Int): Generator[Int] = for (x <- integers) yield lo + x % (hi - lo)
 }

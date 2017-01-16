@@ -14,4 +14,13 @@ class GeneratorTest extends FunSuite {
   test("pairs") {
     assert(pairs(integers, integers).generate != pairs(integers, integers).generate)
   }
+
+  test("single") {
+    assert(Generator.single(5).generate === 5)
+  }
+
+  test("choose") {
+    val generated = Generator.choose(1, 10).generate
+    assert(generated > 1 && generated < 10)
+  }
 }
