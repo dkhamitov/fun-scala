@@ -43,5 +43,7 @@ object Generator {
     override def generate = x
   }
 
-  def choose(lo: Int, hi: Int): Generator[Int] = for (x <- integers) yield lo + x % (hi - lo)
+  def choose(lo: Int, hi: Int): Generator[Int] = for (x <- integers) yield lo + Math.abs(x) % (hi - lo)
+
+  def oneOf[T](xs: T*): Generator[T] = for (id <- choose(0, xs.length)) yield xs(id)
 }
