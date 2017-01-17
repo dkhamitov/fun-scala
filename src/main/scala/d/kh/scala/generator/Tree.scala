@@ -7,13 +7,9 @@ import d.kh.scala.generator.Generator.{booleans, integers}
   */
 trait Tree
 
-case class Inner(left: Tree, right: Tree) extends Tree {
-  override def toString: String = s"[$left, $right]"
-}
+case class Inner(left: Tree, right: Tree) extends Tree
 
-case class Leaf(x: Int) extends Tree {
-  override def toString: String = s"($x)"
-}
+case class Leaf(x: Int) extends Tree
 
 object TreeGenerator {
   def trees: Generator[Tree] = for {
