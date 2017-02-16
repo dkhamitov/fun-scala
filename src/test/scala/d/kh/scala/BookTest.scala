@@ -34,4 +34,10 @@ class BookTest extends FunSuite {
 
     assert(Set("Joshua Bloch") === Book.findAllAuthorsWithAtLeast2Books(books))
   }
+
+  test("override PLUS operator") {
+    val b1 = new Book("BOOK 1", Nil)
+    val b2 = new Book("BOOK 2", Nil)
+    assert(List(b1, b2) === b1 + b2)
+  }
 }

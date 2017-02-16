@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 /**
   * Created by khamitovdm on 18/01/2017.
   */
-class TreeTreeGeneratorTest extends FunSuite {
+class TreeGeneratorTest extends FunSuite {
   test("leaves") {
     assert(TreeGenerator.leaves.generate match {
       case Leaf(_: Int) => true
